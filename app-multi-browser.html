@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Multi View Browser - Abdul Mujahid</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #ffffff; color: #1a1a1a; }
+        
+        .navbar { background: white; border-bottom: 1px solid #e5e7eb; padding: 16px 24px; position: sticky; top: 0; background: rgba(255,255,255,0.95); }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; }
+        .nav-link { text-decoration: none; color: #6b7280; font-weight: 500; padding: 8px 16px; border-radius: 8px; transition: all 0.2s; font-size: 0.9rem; }
+        .nav-link:hover { color: #3b82f6; background: #eff6ff; }
+        
+        .back-button { max-width: 1200px; margin: 24px auto 0; padding: 0 24px; }
+        .back-btn { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: #3b82f6; font-weight: 500; padding: 8px 16px; border-radius: 8px; }
+        .back-btn:hover { background: #eff6ff; }
+        
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 24px; }
+        
+        .app-header { display: flex; gap: 24px; align-items: center; margin-bottom: 32px; flex-wrap: wrap; }
+        .app-icon-large { width: 100px; height: 100px; border-radius: 24px; overflow: hidden; background: #f3f4f6; }
+        .app-icon-large img { width: 100%; height: 100%; object-fit: cover; }
+        .app-info { flex: 1; }
+        .app-name { font-size: 2rem; font-weight: 700; color: #1f2937; margin-bottom: 8px; }
+        .app-package { font-size: 0.8rem; color: #9ca3af; font-family: monospace; margin-bottom: 12px; }
+        
+        .section { margin-bottom: 32px; }
+        .section-title { font-size: 1.1rem; font-weight: 600; color: #1f2937; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #e5e7eb; }
+        .description { color: #4b5563; line-height: 1.7; font-size: 0.95rem; }
+        
+        .download-btn { display: inline-block; background: #9ca3af; color: white; text-decoration: none; padding: 14px 32px; border-radius: 12px; font-weight: 600; margin-top: 8px; cursor: not-allowed; opacity: 0.6; }
+        .coming-badge { display: inline-block; background: #fef3c7; color: #d97706; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 600; margin-left: 12px; vertical-align: middle; }
+        
+        .footer-links { text-align: center; padding: 32px 24px; border-top: 1px solid #e5e7eb; margin-top: 48px; }
+        .footer-links a { color: #6b7280; text-decoration: none; margin: 0 16px; font-size: 0.85rem; }
+        .footer-links a:hover { color: #3b82f6; }
+        .copyright { text-align: center; color: #9ca3af; font-size: 0.75rem; padding: 24px; }
+        
+        @media (max-width: 600px) {
+            .app-header { flex-direction: column; text-align: center; }
+            .app-name { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="privacypolicy.html" class="nav-link">Privacy Policy</a>
+        <a href="terms.html" class="nav-link">Terms of Service</a>
+        <a href="index.html#about" class="nav-link">About</a>
+    </div>
+</div>
+
+<div class="back-button">
+    <a href="index.html" class="back-btn">← Back to Home</a>
+</div>
+
+<div class="container">
+    <div class="app-header">
+        <div class="app-icon-large">
+            <img src="assets/icons/multi-browser-icon.png" alt="Multi View Browser" onerror="this.src='https://placehold.co/100x100/3b82f6/white?text=🌐'">
+        </div>
+        <div class="app-info">
+            <h1 class="app-name">
+                Multi View Browser
+                <span class="coming-badge">Coming Soon</span>
+            </h1>
+            <div class="app-package">com.abdul.multiviewbrowser</div>
+            <button class="download-btn" disabled>Coming Soon</button>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">About This App</div>
+        <p class="description">A powerful browser with multi-window support, tab management, private mode, and fast browsing experience. View multiple web pages simultaneously with split-screen functionality.</p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Features</div>
+        <p class="description">• Multi-window split-screen browsing<br>• Tab management with groups<br>• Private / Incognito mode<br>• Fast page loading with optimized engine<br>• Bookmark and history management<br>• Ad blocker support<br>• Dark mode and customizable themes</p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Legal</div>
+        <p class="description">
+            <a href="privacypolicy.html" style="color: #3b82f6;">Privacy Policy</a> | 
+            <a href="terms.html" style="color: #3b82f6;">Terms of Service</a>
+        </p>
+    </div>
+</div>
+
+<div class="footer-links">
+    <a href="privacypolicy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="mailto:abdulmujahidpersonal@gmail.com">Contact</a>
+</div>
+<div class="copyright">© 2026 Abdul Mujahid | Independent Android Developer</div>
+
+</body>
+</html>
