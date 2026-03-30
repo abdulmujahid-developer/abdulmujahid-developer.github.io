@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -13,578 +13,251 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            background: #f8f9fa;
-            padding: 20px;
+            background: #ffffff;
+            color: #1a1a1a;
         }
 
-        /* Main Container */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        /* Developer Header */
-        .dev-header {
+        .navbar {
             background: white;
-            border-radius: 24px;
-            padding: 32px;
-            margin-bottom: 24px;
-            text-align: center;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            border: 1px solid #eaeaea;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 16px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.95);
         }
 
-        .dev-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #1a73e8, #0d47a1);
-            border-radius: 24px;
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
-            align-items: center;
             justify-content: center;
-            margin: 0 auto 16px;
+            gap: 32px;
+            flex-wrap: wrap;
         }
 
-        .dev-icon i {
-            font-size: 40px;
-            color: white;
-        }
-
-        .dev-name {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #1a1a1a;
-        }
-
-        .dev-title {
-            color: #1a73e8;
+        .nav-link {
+            text-decoration: none;
+            color: #6b7280;
             font-weight: 500;
-            margin: 8px 0;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.2s;
+            font-size: 0.9rem;
         }
 
-        .dev-badge {
-            display: inline-block;
-            background: #e8f0fe;
-            color: #1a73e8;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            margin-top: 8px;
+        .nav-link:hover {
+            color: #3b82f6;
+            background: #eff6ff;
         }
 
-        /* App Grid */
-        .section-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #1a1a1a;
-            margin: 24px 0 16px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #1a73e8;
-            display: inline-block;
+        .nav-link.active {
+            color: #3b82f6;
+            background: #eff6ff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+
+        .title {
+            color: #6b7280;
+            font-size: 1rem;
         }
 
         .apps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            margin-bottom: 32px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-bottom: 48px;
         }
 
         .app-card {
             background: white;
-            border-radius: 20px;
-            padding: 20px;
-            border: 1px solid #eaeaea;
-            transition: all 0.2s;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+            border: 1px solid #e5e7eb;
+            border-radius: 24px;
+            padding: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+
+        .app-card.animate {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         .app-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-            border-color: #1a73e8;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -12px rgba(0,0,0,0.15);
+            border-color: #3b82f6;
         }
 
         .app-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #1a73e8, #0d47a1);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 16px;
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            background: #f3f4f6;
         }
 
-        .app-icon i {
-            font-size: 32px;
-            color: white;
+        .app-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .app-name {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #1a1a1a;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1f2937;
             margin-bottom: 6px;
         }
 
-        .app-id {
+        .app-package {
             font-size: 0.7rem;
-            color: #5f6368;
+            color: #9ca3af;
             font-family: monospace;
             margin-bottom: 12px;
-            word-break: break-all;
         }
 
-        .app-desc {
+        .app-short-desc {
             font-size: 0.85rem;
-            color: #3c4043;
+            color: #6b7280;
             line-height: 1.5;
-            margin-bottom: 16px;
         }
 
-        .app-stats {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 16px;
-            font-size: 0.75rem;
-            color: #5f6368;
-        }
-
-        .app-stats span {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .screenshots {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 16px;
-            overflow-x: auto;
-        }
-
-        .screenshot {
-            width: 80px;
-            height: 140px;
-            background: #f1f3f4;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            font-size: 0.6rem;
-            color: #5f6368;
-            border: 1px solid #eaeaea;
-        }
-
-        .screenshot i {
-            font-size: 28px;
-            color: #1a73e8;
-            margin-bottom: 4px;
-        }
-
-        .app-buttons {
-            display: flex;
-            gap: 12px;
-            margin-top: 12px;
-        }
-
-        .btn-play {
-            background: #1a73e8;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 100px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .btn-play:hover {
-            background: #1557b0;
-        }
-
-        .btn-outline {
-            background: white;
-            border: 1px solid #dadce0;
-            padding: 8px 16px;
-            border-radius: 100px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: #1a73e8;
-            text-decoration: none;
-        }
-
-        .btn-outline:hover {
-            background: #f8f9fa;
-        }
-
-        /* Developer Info Button */
-        .dev-info-btn {
-            background: white;
-            border: 1px solid #dadce0;
-            padding: 12px 28px;
-            border-radius: 100px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: #1a73e8;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin: 20px 0;
-            transition: all 0.2s;
-        }
-
-        .dev-info-btn:hover {
-            background: #f8f9fa;
-            border-color: #1a73e8;
-        }
-
-        /* Footer */
-        .footer {
+        .footer-links {
             text-align: center;
+            padding: 32px 24px;
+            border-top: 1px solid #e5e7eb;
+            margin-top: 48px;
+        }
+
+        .footer-links a {
+            color: #6b7280;
+            text-decoration: none;
+            margin: 0 16px;
+            font-size: 0.85rem;
+        }
+
+        .footer-links a:hover {
+            color: #3b82f6;
+        }
+
+        .copyright {
+            text-align: center;
+            color: #9ca3af;
+            font-size: 0.75rem;
             padding: 24px;
-            color: #9aa0a6;
-            font-size: 0.7rem;
-            border-top: 1px solid #eaeaea;
-            margin-top: 24px;
         }
 
-        .footer a {
-            color: #1a73e8;
-            text-decoration: none;
-            margin: 0 8px;
-        }
-
-        /* Modal Overlay - for Developer Info Page */
-        .info-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            backdrop-filter: blur(4px);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-        }
-
-        .info-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .info-page {
-            background: white;
-            border-radius: 32px;
-            max-width: 500px;
-            width: 90%;
-            max-height: 85vh;
-            overflow-y: auto;
-            padding: 32px;
-            position: relative;
-            transform: scale(0.95);
-            transition: transform 0.3s;
-        }
-
-        .info-overlay.active .info-page {
-            transform: scale(1);
-        }
-
-        .info-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 24px;
-            padding-bottom: 16px;
-            border-bottom: 2px solid #e8f0fe;
-        }
-
-        .info-header h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #1a1a1a;
-        }
-
-        .close-info {
-            background: none;
-            border: none;
-            font-size: 28px;
-            cursor: pointer;
-            color: #5f6368;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-        }
-
-        .close-info:hover {
-            background: #f1f3f4;
-        }
-
-        .info-row {
-            margin-bottom: 20px;
-        }
-
-        .info-label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            font-weight: 600;
-            color: #5f6368;
-            margin-bottom: 4px;
-        }
-
-        .info-value {
-            font-size: 1rem;
-            color: #1a1a1a;
-            font-weight: 500;
-            background: #f8f9fa;
-            padding: 8px 12px;
-            border-radius: 12px;
-            word-break: break-all;
-        }
-
-        .back-home {
-            display: inline-block;
-            margin-top: 20px;
-            color: #1a73e8;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 8px 20px;
-            border: 1px solid #dadce0;
-            border-radius: 100px;
-            text-align: center;
-        }
-
-        @media (max-width: 650px) {
+        @media (max-width: 768px) {
+            .nav-container {
+                gap: 16px;
+            }
+            .nav-link {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+            .name {
+                font-size: 1.8rem;
+            }
             .apps-grid {
                 grid-template-columns: 1fr;
-            }
-            .dev-name {
-                font-size: 1.4rem;
             }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <!-- Developer Header -->
-    <div class="dev-header">
-        <div class="dev-icon">
-            <i>📱</i>
-        </div>
-        <h1 class="dev-name">Abdul Mujahid</h1>
-        <div class="dev-title">Android Developer | Individual</div>
-        <div class="dev-badge">Apps • Games</div>
-    </div>
-
-    <!-- Apps Section -->
-    <div class="section-title">📦 My Applications</div>
-    <div class="apps-grid">
-        
-        <!-- App 1 -->
-        <div class="app-card">
-            <div class="app-icon">
-                <i>🎮</i>
-            </div>
-            <h3 class="app-name">Speed Racer Game</h3>
-            <div class="app-id">com.abdul.speedracer</div>
-            <p class="app-desc">High-speed racing game with stunning graphics and smooth controls. Compete with players worldwide!</p>
-            <div class="app-stats">
-                <span>⭐ 4.8</span>
-                <span>📥 50K+</span>
-                <span>🎮 Racing</span>
-            </div>
-            <div class="screenshots">
-                <div class="screenshot"><i>📸</i> Screen 1</div>
-                <div class="screenshot"><i>📸</i> Screen 2</div>
-                <div class="screenshot"><i>📸</i> Screen 3</div>
-            </div>
-            <div class="app-buttons">
-                <a href="#" class="btn-play">📲 Play Store</a>
-                <a href="#" class="btn-outline">More Info</a>
-            </div>
-        </div>
-
-        <!-- App 2 -->
-        <div class="app-card">
-            <div class="app-icon">
-                <i>📝</i>
-            </div>
-            <h3 class="app-name">Task Manager Pro</h3>
-            <div class="app-id">com.abdul.taskmanager</div>
-            <p class="app-desc">Clean and modern task management app with reminders, categories, and dark mode support.</p>
-            <div class="app-stats">
-                <span>⭐ 4.7</span>
-                <span>📥 100K+</span>
-                <span>📋 Productivity</span>
-            </div>
-            <div class="screenshots">
-                <div class="screenshot"><i>📸</i> Screen 1</div>
-                <div class="screenshot"><i>📸</i> Screen 2</div>
-                <div class="screenshot"><i>📸</i> Screen 3</div>
-            </div>
-            <div class="app-buttons">
-                <a href="#" class="btn-play">📲 Play Store</a>
-                <a href="#" class="btn-outline">More Info</a>
-            </div>
-        </div>
-
-        <!-- App 3 -->
-        <div class="app-card">
-            <div class="app-icon">
-                <i>🎵</i>
-            </div>
-            <h3 class="app-name">Music Player HD</h3>
-            <div class="app-id">com.abdul.musicplayer</div>
-            <p class="app-desc">Beautiful music player with equalizer, lyrics support, and offline playback.</p>
-            <div class="app-stats">
-                <span>⭐ 4.9</span>
-                <span>📥 200K+</span>
-                <span>🎵 Music</span>
-            </div>
-            <div class="screenshots">
-                <div class="screenshot"><i>📸</i> Screen 1</div>
-                <div class="screenshot"><i>📸</i> Screen 2</div>
-                <div class="screenshot"><i>📸</i> Screen 3</div>
-            </div>
-            <div class="app-buttons">
-                <a href="#" class="btn-play">📲 Play Store</a>
-                <a href="#" class="btn-outline">More Info</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Developer Info Button -->
-    <div style="text-align: center;">
-        <button class="dev-info-btn" id="devInfoBtn">
-            👤 Developer Information
-        </button>
-    </div>
-
-    <!-- Privacy & Terms Links -->
-    <div style="text-align: center; margin: 20px 0;">
-        <a href="privacypolicy.html" style="color: #1a73e8; text-decoration: none; margin: 0 12px;">Privacy Policy</a>
-        <a href="terms.html" style="color: #1a73e8; text-decoration: none; margin: 0 12px;">Terms of Service</a>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-        © 2026 Abdul Mujahid | Independent Android Developer
+<div class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="privacypolicy.html" class="nav-link">Privacy Policy</a>
+        <a href="terms.html" class="nav-link">Terms of Service</a>
+        <a href="index.html#about" class="nav-link">About</a>
     </div>
 </div>
 
-<!-- Developer Info Modal/Page -->
-<div class="info-overlay" id="infoOverlay">
-    <div class="info-page">
-        <div class="info-header">
-            <h2>👨‍💻 Developer Info</h2>
-            <button class="close-info" id="closeInfoBtn">&times;</button>
-        </div>
-        
-        <div class="info-row">
-            <div class="info-label">Full Name</div>
-            <div class="info-value">Abdul Mujahid</div>
-        </div>
-        
-        <div class="info-row">
-            <div class="info-label">Organizational Name</div>
-            <div class="info-value">Abdul Mujahid</div>
-        </div>
-        
-        <div class="info-row">
-            <div class="info-label">Developer Type</div>
-            <div class="info-value">Individual</div>
-        </div>
-        
-        <div class="info-row">
-            <div class="info-label">Expertise</div>
-            <div class="info-value">Android Development • Mobile Games • Kotlin • Java • Unity</div>
-        </div>
-        
-        <div class="info-row">
-            <div class="info-label">Total Apps</div>
-            <div class="info-value">3+ Published Apps</div>
-        </div>
-        
-        <div class="info-row">
-            <div class="info-label">Total Downloads</div>
-            <div class="info-value">350,000+</div>
-        </div>
-        
-        <div class="info-row">
-            <div class="info-label">Email</div>
-            <div class="info-value">abdul.mujahid@android.dev</div>
-        </div>
-        
-        <div class="info-row">
-            <div class="info-label">App Package ID Format</div>
-            <div class="info-value">com.abdul.[appname]</div>
-        </div>
-        
-        <div class="info-row">
-            <div class="info-label">JSON Config</div>
-            <div class="info-value" style="font-family: monospace; font-size: 0.7rem;">
-{
-  "developer": "Abdul Mujahid",
-  "org": "Abdul Mujahid",
-  "type": "Individual",
-  "apps": 3,
-  "package_prefix": "com.abdul",
-  "platforms": ["Android", "Games"]
-}
+<div class="container">
+    <div class="header">
+        <h1 class="name">Abdul Mujahid</h1>
+        <p class="title">Independent Android Developer</p>
+    </div>
+
+    <div class="apps-grid">
+        <!-- App 1 - Text Stylish Repeater -->
+        <div class="app-card" data-app="text-stylish">
+            <div class="app-icon">
+                <img src="assets/icons/text-stylish-icon.png" alt="Text Stylish Repeater" onerror="this.src='https://placehold.co/80x80/3b82f6/white?text=✍️'">
             </div>
+            <h3 class="app-name">Text Stylish Repeater</h3>
+            <div class="app-package">com.abdul.textstylishrepeater</div>
+            <p class="app-short-desc">Create stylish text with multiple fonts and repeat patterns</p>
         </div>
-        
-        <div style="text-align: center;">
-            <a href="#" class="back-home" id="backHomeBtn">← Back to Portfolio</a>
+
+        <!-- App 2 - Multi View Browser -->
+        <div class="app-card" data-app="multi-browser">
+            <div class="app-icon">
+                <img src="assets/icons/multi-browser-icon.png" alt="Multi View Browser" onerror="this.src='https://placehold.co/80x80/3b82f6/white?text=🌐'">
+            </div>
+            <h3 class="app-name">Multi View Browser</h3>
+            <div class="app-package">com.abdul.multiviewbrowser</div>
+            <p class="app-short-desc">Fast browser with multi-window and tab management</p>
         </div>
     </div>
+</div>
+
+<div class="footer-links">
+    <a href="privacypolicy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="mailto:abdulmujahidpersonal@gmail.com">Contact</a>
+</div>
+<div class="copyright">
+    © 2026 Abdul Mujahid | Independent Android Developer
 </div>
 
 <script>
-    const modal = document.getElementById('infoOverlay');
-    const openBtn = document.getElementById('devInfoBtn');
-    const closeBtn = document.getElementById('closeInfoBtn');
-    const backBtn = document.getElementById('backHomeBtn');
+    const cards = document.querySelectorAll('.app-card');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('animate');
+                }, index * 100);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
 
-    function openModal() {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
+    cards.forEach(card => observer.observe(card));
 
-    function closeModal() {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-
-    openBtn.addEventListener('click', openModal);
-    closeBtn.addEventListener('click', closeModal);
-    backBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        closeModal();
-    });
-
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('active')) {
-            closeModal();
-        }
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            const app = card.dataset.app;
+            if (app === 'text-stylish') {
+                window.location.href = 'app-text-stylish.html';
+            } else if (app === 'multi-browser') {
+                window.location.href = 'app-multi-browser.html';
+            }
+        });
     });
 </script>
 
