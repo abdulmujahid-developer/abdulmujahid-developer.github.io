@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Abdul Mujahid - Android Developer</title>
+    <title>Abdul Mujahid - Android & Game Developer</title>
     <style>
         * {
             margin: 0;
@@ -12,175 +12,347 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: #ffffff;
-            color: #1a1a1a;
+            color: #1a1a2e;
+            line-height: 1.5;
         }
 
         .navbar {
-            background: white;
-            border-bottom: 1px solid #e5e7eb;
-            padding: 16px 24px;
+            background: #ffffff;
+            border-bottom: 1px solid #eaeef2;
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(255,255,255,0.95);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            flex-wrap: wrap;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: #6b7280;
-            font-weight: 500;
-            padding: 8px 16px;
-            border-radius: 8px;
-            transition: all 0.2s;
-            font-size: 0.9rem;
-        }
-
-        .nav-link:hover {
-            color: #3b82f6;
-            background: #eff6ff;
-        }
-
-        .nav-link.active {
-            color: #3b82f6;
-            background: #eff6ff;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 40px 24px;
+            padding: 0 30px;
         }
 
-        .header {
-            text-align: center;
-            margin-bottom: 48px;
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
-        .name {
-            font-size: 2.5rem;
+        .logo {
+            font-size: 1.5rem;
             font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 8px;
+            background: linear-gradient(135deg, #1e293b, #2d3e50);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
-        .title {
-            color: #6b7280;
-            font-size: 1rem;
+        .back-button {
+            display: none;
+            background: #f1f5f9;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            color: #1e293b;
+            transition: all 0.2s;
+            margin-right: auto;
         }
 
-        .apps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 32px;
-            margin-bottom: 48px;
+        .back-button:hover {
+            background: #e2e8f0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #334155;
+            transition: all 0.2s ease;
+            padding-bottom: 4px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #0f172a;
+            border-bottom-color: #3b82f6;
+        }
+
+        .hero {
+            padding: 60px 0 40px;
+        }
+
+        .badge {
+            background: #f1f5f9;
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #1e293b;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #0f172a;
+            margin-bottom: 16px;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #2563eb, #1e40af);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #475569;
+            margin-bottom: 40px;
+            border-left: 4px solid #3b82f6;
+            padding-left: 20px;
+        }
+
+        .apps-section {
+            margin: 60px 0 30px;
+        }
+
+        .apps-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #0f172a;
+        }
+
+        .app-grid {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
         }
 
         .app-card {
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 24px;
+            flex: 1;
+            min-width: 280px;
+            background: #ffffff;
+            border: 1px solid #eef2f8;
+            border-radius: 28px;
             padding: 24px;
+            transition: all 0.25s ease;
+            text-align: center;
             cursor: pointer;
-            transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateX(-30px);
-        }
-
-        .app-card.animate {
-            opacity: 1;
-            transform: translateX(0);
         }
 
         .app-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px -12px rgba(0,0,0,0.15);
-            border-color: #3b82f6;
+            transform: translateY(-5px);
+            border-color: #cbd5e1;
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);
         }
 
         .app-icon {
             width: 80px;
             height: 80px;
             border-radius: 20px;
-            margin-bottom: 20px;
-            overflow: hidden;
-            background: #f3f4f6;
+            object-fit: cover;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
-        .app-icon img {
+        .app-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: #0f172a;
+        }
+
+        .app-card p {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .coming-soon-tag {
+            background: #fef3c7;
+            color: #b45309;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 8px;
+        }
+
+        /* App Detail Page */
+        .app-detail-page {
+            display: none;
+            padding: 40px 0 60px;
+        }
+
+        .detail-header {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            align-items: center;
+        }
+
+        .detail-icon {
+            width: 110px;
+            height: 110px;
+            border-radius: 28px;
+            object-fit: cover;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .detail-info {
+            flex: 1;
+        }
+
+        .detail-info h2 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+            color: #0f172a;
+        }
+
+        .download-btn-large {
+            background: #22c55e;
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s;
+            margin: 15px 0;
+        }
+
+        .download-btn-large:hover {
+            background: #16a34a;
+            transform: scale(1.02);
+        }
+
+        .version-box {
+            background: #f8fafc;
+            padding: 12px 20px;
+            border-radius: 16px;
+            margin: 15px 0;
+            color: #475569;
+            display: inline-block;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            margin: 30px 0 15px 0;
+            color: #0f172a;
+        }
+
+        .short-desc {
+            font-size: 1.1rem;
+            color: #334155;
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 20px;
+            margin: 15px 0;
+        }
+
+        .about-text {
+            color: #475569;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .screenshots-grid {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .screenshot {
+            width: 200px;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: 0.2s;
+            border: 1px solid #eef2f8;
+        }
+
+        .screenshot:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .image-viewer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            background: rgba(0,0,0,0.95);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
 
-        .app-name {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 6px;
+        .image-viewer img {
+            max-width: 90%;
+            max-height: 85%;
+            border-radius: 16px;
         }
 
-        .app-package {
-            font-size: 0.7rem;
-            color: #9ca3af;
-            font-family: monospace;
-            margin-bottom: 12px;
+        .close-viewer {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            background: white;
+            border: none;
+            font-size: 2rem;
+            padding: 8px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
         }
 
-        .app-short-desc {
-            font-size: 0.85rem;
-            color: #6b7280;
-            line-height: 1.5;
-        }
-
-        .footer-links {
+        footer {
             text-align: center;
-            padding: 32px 24px;
-            border-top: 1px solid #e5e7eb;
-            margin-top: 48px;
+            padding: 40px 20px 30px;
+            border-top: 1px solid #edf2f7;
+            margin-top: 70px;
+            color: #64748b;
         }
 
-        .footer-links a {
-            color: #6b7280;
-            text-decoration: none;
-            margin: 0 16px;
-            font-size: 0.85rem;
-        }
-
-        .footer-links a:hover {
-            color: #3b82f6;
-        }
-
-        .copyright {
-            text-align: center;
-            color: #9ca3af;
-            font-size: 0.75rem;
-            padding: 24px;
-        }
-
-        @media (max-width: 768px) {
+        @media (max-width: 700px) {
             .nav-container {
-                gap: 16px;
+                flex-direction: column;
+                align-items: flex-start;
             }
-            .nav-link {
-                padding: 6px 12px;
-                font-size: 0.8rem;
+            h1 {
+                font-size: 2.2rem;
             }
-            .name {
-                font-size: 1.8rem;
+            .app-grid {
+                flex-direction: column;
             }
-            .apps-grid {
-                grid-template-columns: 1fr;
+            .screenshot {
+                width: 100%;
+                max-width: 280px;
+            }
+            .detail-header {
+                flex-direction: column;
+                text-align: center;
             }
         }
     </style>
@@ -188,77 +360,204 @@
 <body>
 
 <div class="navbar">
-    <div class="nav-container">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="privacypolicy.html" class="nav-link">Privacy Policy</a>
-        <a href="terms.html" class="nav-link">Terms of Service</a>
-        <a href="index.html#about" class="nav-link">About</a>
+    <div class="container nav-container">
+        <div class="logo">⚡ Abdul Mujahid</div>
+        <button class="back-button" id="backButton" onclick="backToHome()">← Back to Home</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#" onclick="showHomePage(event)">Home</a></li>
+            <li><a href="privacypolicy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms Of Service</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
     </div>
 </div>
 
-<div class="container">
-    <div class="header">
-        <h1 class="name">Abdul Mujahid</h1>
-        <p class="title">Independent Android Developer</p>
-    </div>
-
-    <div class="apps-grid">
-        <!-- App 1 - Text Stylish Repeater -->
-        <div class="app-card" data-app="text-stylish">
-            <div class="app-icon">
-                <img src="assets/icons/text-stylish-icon.png" alt="Text Stylish Repeater" onerror="this.src='https://placehold.co/80x80/3b82f6/white?text=✍️'">
+<main class="container">
+    <!-- HOME PAGE -->
+    <div id="homePage">
+        <div class="hero">
+            <div class="badge">✦ Developer Portfolio</div>
+            <h1>Abdul Mujahid <span class="highlight">Developer</span></h1>
+            <div class="subtitle">
+                Android Developer • Game Developer
             </div>
-            <h3 class="app-name">Text Stylish Repeater</h3>
-            <div class="app-package">com.abdul.textstylishrepeater</div>
-            <p class="app-short-desc">Create stylish text with multiple fonts and repeat patterns</p>
         </div>
 
-        <!-- App 2 - Multi View Browser -->
-        <div class="app-card" data-app="multi-browser">
-            <div class="app-icon">
-                <img src="assets/icons/multi-browser-icon.png" alt="Multi View Browser" onerror="this.src='https://placehold.co/80x80/3b82f6/white?text=🌐'">
+        <div class="apps-section">
+            <h2>📱 Our Apps</h2>
+            <div class="app-grid">
+                <!-- App 1 -->
+                <div class="app-card" onclick="showAppDetail('text')">
+                    <img src="assets/text.png" alt="Text Stylish" class="app-icon" onerror="this.src='https://placehold.co/80x80?text=Text'">
+                    <h3>Text Stylish Designer</h3>
+                    <p>Repeater Gen • Cool Fonts • Bio Creator</p>
+                </div>
+                <!-- App 2 -->
+                <div class="app-card" onclick="showAppDetail('swift')">
+                    <img src="assets/swift.png" alt="Swift Converter" class="app-icon" onerror="this.src='https://placehold.co/80x80?text=Swift'">
+                    <h3>Swift Image Converter</h3>
+                    <p>PNG / JPG / WEBP • Batch Convert</p>
+                </div>
+                <!-- App 3 Coming Soon -->
+                <div class="app-card" onclick="showAppDetail('html')">
+                    <img src="assets/hc.png" alt="HTML Compiler" class="app-icon" onerror="this.src='https://placehold.co/80x80?text=HTML'">
+                    <h3>HTML Compiler - Creator</h3>
+                    <p>Code Editor • HTML/CSS/JS Runner</p>
+                    <span class="coming-soon-tag">🚀 Coming Soon</span>
+                </div>
             </div>
-            <h3 class="app-name">Multi View Browser</h3>
-            <div class="app-package">com.abdul.multiviewbrowser</div>
-            <p class="app-short-desc">Fast browser with multi-window and tab management</p>
         </div>
     </div>
-</div>
 
-<div class="footer-links">
-    <a href="privacypolicy.html">Privacy Policy</a>
-    <a href="terms.html">Terms of Service</a>
-    <a href="mailto:abdulmujahidpersonal@gmail.com">Contact</a>
-</div>
-<div class="copyright">
-    © 2026 Abdul Mujahid | Independent Android Developer
+    <!-- APP DETAIL PAGE (dynamic) -->
+    <div id="appDetailPage" class="app-detail-page">
+        <div id="detailContent"></div>
+    </div>
+</main>
+
+<footer>
+    <p>© 2026 Abdul Mujahid — Android & Game Developer | White Theme UI</p>
+</footer>
+
+<!-- FULLSCREEN IMAGE VIEWER -->
+<div id="imageViewer" class="image-viewer" onclick="closeImageViewer()">
+    <button class="close-viewer" onclick="closeImageViewer()">✕</button>
+    <img id="viewerImage" src="">
 </div>
 
 <script>
-    const cards = document.querySelectorAll('.app-card');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.classList.add('animate');
-                }, index * 100);
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
+    // App Data
+    const appsData = {
+        text: {
+            id: "text",
+            name: "Text Stylish Designer - Repeater Gen",
+            icon: "assets/text.png",
+            shortDesc: "Create stylish fonts, repeat text patterns, bio maker & cool captions for Instagram, WhatsApp, and more.",
+            about: "Text Stylish Designer is a powerful tool to generate cool fonts, stylish text, and repeating patterns. Perfect for social media bios, gaming usernames, and creative writing. Features 100+ fonts, real-time preview, one-click copy, and repeat generator for unique text effects. Completely free with no watermarks!",
+            version: "v2.5.0",
+            size: "12 MB",
+            downloads: "50K+",
+            downloadLink: "https://example.com/download/text-stylish.apk",
+            comingSoon: false,
+            screenshots: ["text_screen.jpg", "text_screen2.jpg", "text_screen3.jpg"]
+        },
+        swift: {
+            id: "swift",
+            name: "Swift Image Converter - PNG/JPG",
+            icon: "assets/swift.png",
+            shortDesc: "Fast image converter with batch processing. Convert PNG to JPG, JPG to PNG, resize & compress images instantly.",
+            about: "Swift Image Converter lets you convert images between PNG, JPG, WEBP formats instantly. Batch convert hundreds of images, adjust quality, resize dimensions, and save storage space. Clean UI, no ads, and lightning fast processing. Best tool for photographers and designers.",
+            version: "v3.1.0",
+            size: "8.5 MB",
+            downloads: "100K+",
+            downloadLink: "https://example.com/download/swift-converter.apk",
+            comingSoon: false,
+            screenshots: ["swift_screen.jpg", "swift_screen2.jpg", "swift_screen3.jpg"]
+        },
+        html: {
+            id: "html",
+            name: "HTML Compiler - Creator",
+            icon: "assets/hc.png",
+            shortDesc: "Write, compile & run HTML/CSS/JS code on your phone. Ideal for web developers and learners.",
+            about: "HTML Compiler is coming soon! It will be a complete code editor with live preview, syntax highlighting, HTML/CSS/JS support, and project exporter. Build websites directly from your Android device. Save projects, export as HTML files, and test your code in real-time.",
+            version: "Coming Soon",
+            size: "—",
+            downloads: "—",
+            downloadLink: "#",
+            comingSoon: true,
+            screenshots: []
+        }
+    };
 
-    cards.forEach(card => observer.observe(card));
+    function showAppDetail(appId) {
+        const app = appsData[appId];
+        if (!app) return;
 
-    cards.forEach(card => {
-        card.addEventListener('click', () => {
-            const app = card.dataset.app;
-            if (app === 'text-stylish') {
-                window.location.href = 'app-text-stylish.html';
-            } else if (app === 'multi-browser') {
-                window.location.href = 'app-multi-browser.html';
-            }
-        });
-    });
+        // Hide home, show detail page
+        document.getElementById('homePage').style.display = 'none';
+        document.getElementById('appDetailPage').style.display = 'block';
+        document.querySelector('.back-button').style.display = 'flex';
+        document.getElementById('navLinks').style.display = 'none';
+
+        // Build screenshots HTML
+        let screenshotsHtml = '';
+        if (app.screenshots.length > 0) {
+            screenshotsHtml = '<div class="screenshots-grid">';
+            app.screenshots.forEach(ss => {
+                screenshotsHtml += `<img src="assets/${ss}" class="screenshot" onclick="event.stopPropagation(); openImageViewer('assets/${ss}')" onerror="this.src='https://placehold.co/200x400?text=SS'">`;
+            });
+            screenshotsHtml += '</div>';
+        } else {
+            screenshotsHtml = '<p style="color:#94a3b8; padding: 20px 0;">✨ Screenshots will be added after release.</p>';
+        }
+
+        // Download button HTML
+        let downloadBtnHtml = '';
+        if (app.comingSoon) {
+            downloadBtnHtml = `<button class="download-btn-large" style="background:#94a3b8; cursor:not-allowed;">🚀 Coming Soon</button>`;
+        } else {
+            downloadBtnHtml = `<a href="${app.downloadLink}" target="_blank"><button class="download-btn-large">📥 Download APK (${app.size})</button></a>`;
+        }
+
+        const detailHtml = `
+            <div class="detail-header">
+                <img src="${app.icon}" class="detail-icon" onerror="this.src='https://placehold.co/110x110?text=App'">
+                <div class="detail-info">
+                    <h2>${app.name}</h2>
+                    ${downloadBtnHtml}
+                    <div class="version-box">
+                        📌 Version: ${app.version} &nbsp;&nbsp;|&nbsp;&nbsp; 📦 Size: ${app.size} &nbsp;&nbsp;|&nbsp;&nbsp; ⬇️ Downloads: ${app.downloads}
+                    </div>
+                </div>
+            </div>
+
+            <div class="short-desc">
+                📝 <strong>Short Description</strong><br>
+                ${app.shortDesc}
+            </div>
+
+            <h3 class="section-title">ℹ️ About This App</h3>
+            <div class="about-text">
+                ${app.about}
+            </div>
+
+            <h3 class="section-title">📸 Screenshots</h3>
+            ${screenshotsHtml}
+        `;
+
+        document.getElementById('detailContent').innerHTML = detailHtml;
+    }
+
+    function backToHome() {
+        document.getElementById('homePage').style.display = 'block';
+        document.getElementById('appDetailPage').style.display = 'none';
+        document.querySelector('.back-button').style.display = 'none';
+        document.getElementById('navLinks').style.display = 'flex';
+    }
+
+    function showHomePage(event) {
+        if(event) event.preventDefault();
+        backToHome();
+        document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+        if(event) event.target.classList.add('active');
+    }
+
+    // Fullscreen Image Viewer
+    function openImageViewer(src) {
+        const viewer = document.getElementById('imageViewer');
+        const viewerImg = document.getElementById('viewerImage');
+        viewerImg.src = src;
+        viewer.style.display = 'flex';
+    }
+
+    function closeImageViewer() {
+        document.getElementById('imageViewer').style.display = 'none';
+    }
+
+    // Set active home on load
+    window.onload = () => {
+        document.querySelector('.nav-links a').classList.add('active');
+    }
 </script>
 
 </body>
