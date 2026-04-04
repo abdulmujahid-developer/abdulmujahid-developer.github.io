@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Abdul Mujahid</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #ffffff;
+            color: #1a1a2e;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background: #ffffff;
+            border-bottom: 1px solid #eaeef2;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #1e293b, #2d3e50);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #334155;
+            transition: all 0.2s ease;
+            padding-bottom: 4px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #0f172a;
+            border-bottom-color: #3b82f6;
+        }
+
+        .about-container {
+            max-width: 1000px;
+            margin: 50px auto;
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 45px 40px;
+            border: 1px solid #eff3f8;
+        }
+
+        .about-container h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #0f172a;
+        }
+
+        .about-container h3 {
+            font-size: 1.4rem;
+            margin: 35px 0 15px 0;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .about-container p {
+            color: #334155;
+            margin-bottom: 16px;
+        }
+
+        .dev-meta {
+            background: #f8fafc;
+            border-radius: 24px;
+            padding: 24px 28px;
+            margin: 28px 0;
+            border: 1px solid #eef2f8;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .skill-tag {
+            background: #e6f0ff;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            color: #1e40af;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            background: #f1f5f9;
+            border-radius: 20px;
+            padding: 25px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .email-link {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: #475569;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .social-links a:hover {
+            color: #2563eb;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px 30px;
+            border-top: 1px solid #edf2f7;
+            margin-top: 40px;
+            color: #64748b;
+        }
+
+        @media (max-width: 700px) {
+            .about-container {
+                padding: 30px 20px;
+                margin: 30px 20px;
+            }
+            .nav-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .container {
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="container nav-container">
+        <div class="logo">⚡ Abdul Mujahid</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="privacypolicy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms Of Service</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+        </ul>
+    </div>
+</div>
+
+<main>
+    <div class="about-container">
+        <h2>About Abdul Mujahid</h2>
+        
+        <p>👋 <strong>Hey there!</strong> I'm Abdul Mujahid — a passionate Android and Game Developer. I love building meaningful digital experiences that help people in their daily lives.</p>
+        
+        <div class="dev-meta">
+            <p>📱 <strong>Android Developer:</strong> I create high-quality Android apps that solve real problems. My apps are designed with clean UI, smooth performance, and user privacy in mind.</p>
+            <p style="margin-top: 16px;">🎮 <strong>Game Developer:</strong> I develop engaging mobile games using Unity. From hyper-casual to simulation games, I focus on fun mechanics and optimized performance.</p>
+        </div>
+
+        <h3>🛠️ Skills & Technologies</h3>
+        <div class="skills-grid">
+            <span class="skill-tag">Kotlin</span>
+            <span class="skill-tag">Jetpack Compose</span>
+            <span class="skill-tag">MVVM</span>
+            <span class="skill-tag">Firebase</span>
+            <span class="skill-tag">Room DB</span>
+            <span class="skill-tag">Retrofit</span>
+            <span class="skill-tag">Unity</span>
+            <span class="skill-tag">C#</span>
+            <span class="skill-tag">AdMob</span>
+            <span class="skill-tag">Unity Ads</span>
+            <span class="skill-tag">Git</span>
+        </div>
+
+        <h3>📱 My Apps</h3>
+        <ul>
+            <li><strong>Text Stylish Designer</strong> - Create cool fonts & repeat text patterns (Contains Ads: AdMob + Unity Ads)</li>
+            <li><strong>Swift Image Converter</strong> - Convert PNG/JPG instantly (✨ Ad-Free)</li>
+            <li><strong>HTML Compiler - Creator</strong> - Write & run HTML/CSS/JS (Coming Soon, will contain ads)</li>
+        </ul>
+
+        <h3>💡 Mission</h3>
+        <p>To create useful, accessible, and privacy-focused applications. I believe in clean code, regular updates, and listening to user feedback. Every app is built with the user's best interest in mind.</p>
+
+        <h3>📬 Contact & Connect</h3>
+        <div class="contact-info">
+            <p>📧 <strong>Email:</strong> <a href="mailto:abdulmujahidpersonal@gmail.com" class="email-link">abdulmujahidpersonal@gmail.com</a></p>
+            <p>🐙 <strong>GitHub:</strong> github.com/abdulmujahid</p>
+            <p>💼 <strong>LinkedIn:</strong> linkedin.com/in/abdul-mujahid</p>
+            <div class="social-links">
+                <a href="#">📱 Google Play</a>
+                <a href="#">🎮 Itch.io</a>
+            </div>
+        </div>
+
+        <p style="margin-top: 30px; font-size: 0.9rem; color: #64748b;">⚡ For privacy concerns, app support, or business inquiries, feel free to reach out via email. I typically respond within 48 hours.</p>
+    </div>
+</main>
+
+<footer>
+    <p>© 2026 Abdul Mujahid — Android & Game Developer | Built with ❤️</p>
+</footer>
+
+</body>
+</html>
